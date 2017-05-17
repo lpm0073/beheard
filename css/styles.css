@@ -101,7 +101,7 @@ border: none;
 
 body {
 #  background-color: #f1f1f1;
-  background-image: url("/images/mlk-march-on-dc.jpg");
+  background-image: url('http://cdn-beheard.lawrencemcdaniel.com/images/mlk-march-on-dc.jpg');
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
@@ -113,6 +113,8 @@ footer {
   height: 75px;
   background-color: #111111;
   color: white;
+  margin: 0px;
+  padding: 0px;
 }
 
 footer p {
