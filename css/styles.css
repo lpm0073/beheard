@@ -1,35 +1,91 @@
-/*------------------------------------------------------------------
- FOR COURSE: Change the "color" attribute from green to #5F152C
- ------------------------------------------------------------------*/
-#site-name {
-  font-family: 'Lora', serif;
-#  color: 	#5F152C;
-  color: 	green;
-  font-size: 2em;
-  font-weight: 900;
-  margin: auto;
-}
-/*------------------------------------------------------------------
- END: FOR COURSE
- ------------------------------------------------------------------*/
 
+/* Lean Canvas */
+.col-md-2 {
+  padding: 0px;
+}
+
+.col-md-4 {
+  padding: 0px;
+}
+
+.col-md-12 {
+  padding: 0px;
+}
+
+#leancanvas-title h2 {
+  background-color: rgba(255,255,255, 0.9);
+  margin:0px;
+  padding:0px;
+  color: #666666;
+  text-align: center;
+}
+
+.canvas-column {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  border: 0.5px solid #dddddd;
+  overflow: hidden;
+  color: black;
+  background-color: rgba(255,255,255, 0.9);
+}
+
+.canvas-column-full {
+  height: 500px;
+}
+.canvas-column-half {
+  height: 250px;
+}
+
+.canvas-column p {
+  padding: 5%;
+  margin: 1%;
+  text-align: left;
+  border: none;
+  margin-bottom: 3%;
+  font-size: 1em;
+  color: #666666;
+#  background-color: rgba(255,255,255, 0.9);
+}
+
+.canvas-column h3 {
+  text-align: left;
+  font-size: 1.5em;
+  color: #666666;
+  margin: 5%;
+}
+
+.canvas-column h4 {
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+  margin: 5%;
+  color: lightblue;
+}
+
+
+/* END Lean Canvas */
+
+#site-name {
+}
 
 body {
-#  font-size: 16px;
-#  color: #fff;
-#  background-color: #61122f;
-  font-family: 'Oxygen', sans-serif;
+#  background-color: #f1f1f1;
+  background-image: url("/images/mlk-march-on-dc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #logo-img {
-  background-color: #E5E0CD;
+  background-color: #111111;
 }
 
 /** HEADER **/
 #header-nav {
-  background-color: #E5E0CD;
+  background-color: #111111;
   border-radius: 0;
-  border: 1px solid #E0d9C9;
+  border: 1px solid #111111;
 }
 
 
@@ -77,67 +133,6 @@ body {
   margin-top: -30px;
 }
 /* END HEADER */
-
-
-
-
-
-/* HOME PAGE */
-#our-course {
-  text-align: center;
-}
-
-#course-tile {
-  height: 500px;
-  width: 100%;
-  margin-bottom: 15px;
-  margin-top:50px;
-  position: relative;
-  border: 1px solid #E0d9C9;
-  overflow: hidden;
-  color: black;
-  background-color: #E5E0CD;
-  background-position: center;
-}
-
-#course-tile:hover {
-  box-shadow: 0 1px 3px 1px #999999;
-}
-
-
-#course-tile img {
-  width: 100%;
-  padding: 5%;
-}
-
-#course-tile p {
-  padding: 5%;
-  margin: 1%;
-  text-align: justify;
-  border: none;
-}
-
-#course-tile p:hover {
-  box-shadow: none;
-}
-
-#course-tile span {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  margin-bottom: 5px;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bolder;
-  background-color: #E5E0CD;
-#  color: #fff;
-#  opacity: .5;
-}
-
-/* END HOME PAGE */
-
-
 
 
 /********** Large devices only **********/
