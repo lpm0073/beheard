@@ -7,9 +7,30 @@
 .col-md-4 {
   padding: 0px;
 }
-
+.col-md-6 {
+  padding: 0px;
+}
 .col-md-12 {
   padding: 0px;
+}
+
+.panel-padding {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.panel-rounded-corners {
+  border-radius: 5px !important;
+}
+
+
+#section-overview {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+#section-leancanvas {
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 #leancanvas-title h2 {
@@ -36,6 +57,9 @@
 }
 .panel-column-half {
   height: 250px;
+}
+.panel-column-quarter {
+  height: 150px;
 }
 
 .panel-column p {
@@ -78,6 +102,9 @@ border: none;
 body {
 #  background-color: #f1f1f1;
   background-image: url("/images/mlk-march-on-dc.jpg");
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
