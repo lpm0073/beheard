@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-.canvas-column {
+.panel-column {
   width: 100%;
   margin: 0px;
   padding: 0px;
@@ -31,43 +31,48 @@
   background-color: rgba(255,255,255, 0.9);
 }
 
-.canvas-column-full {
+.panel-column-full {
   height: 500px;
 }
-.canvas-column-half {
+.panel-column-half {
   height: 250px;
 }
 
-.canvas-column p {
-  padding: 5%;
-  margin: 1%;
+.panel-column p {
+  padding: 5px;
+  margin: 5px;
   text-align: left;
-  border: none;
-  margin-bottom: 3%;
-  font-size: 1em;
+  margin-bottom: 25px;
+#  font-size: 1em;
   color: #666666;
 #  background-color: rgba(255,255,255, 0.9);
+border: none;
 }
 
-.canvas-column h3 {
+.panel-column h3 {
   text-align: left;
   font-size: 1.5em;
   color: #666666;
-  margin: 5%;
+  margin: 10px;
 }
 
-.canvas-column h4 {
+.panel-column h4 {
   font-size: 1em;
-  font-weight: 600;
   text-align: left;
-  margin: 5%;
-  color: lightblue;
+  margin: 10px;
+  margin-bottom: 0px;
+  color: deepskyblue;
 }
 
 
 /* END Lean Canvas */
 
 #site-name {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -75,10 +80,6 @@ body {
   background-image: url("/images/mlk-march-on-dc.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#logo-img {
-  background-color: #111111;
 }
 
 /** HEADER **/
