@@ -34,7 +34,9 @@
 }
 
 #leancanvas-title h2 {
-  background-color: rgba(255,255,255, 0.9);
+  background-color: rgba(242,222,223, 0.9);   /* pink */
+#  background-color: rgba(254,247,228, 0.9);   /* yellow */
+#  background-color: rgba(222,240,216, 0.9);   /* green */
   margin:0px;
   padding:0px;
   color: #666666;
@@ -46,10 +48,12 @@
   margin: 0px;
   padding: 0px;
   position: relative;
-  border: 0.5px solid #dddddd;
+  border: 0.5px solid indianred;
   overflow: hidden;
   color: black;
-  background-color: rgba(255,255,255, 0.9);
+  background-color: rgba(242,222,223, 0.9);   /* pink */
+#  background-color: rgba(254,247,228, 0.9);   /* yellow */
+#  background-color: rgba(222,240,216, 0.9);   /* green */
 }
 
 .panel-column-full {
@@ -67,9 +71,7 @@
   margin: 5px;
   text-align: left;
   margin-bottom: 25px;
-#  font-size: 1em;
   color: #666666;
-#  background-color: rgba(255,255,255, 0.9);
 border: none;
 }
 
@@ -85,7 +87,7 @@ border: none;
   text-align: left;
   margin: 10px;
   margin-bottom: 0px;
-  color: deepskyblue;
+  color: indianred;
 }
 
 
@@ -102,11 +104,16 @@ border: none;
 body {
 #  background-color: #f1f1f1;
   background-image: url('http://cdn-beheard.lawrencemcdaniel.com/images/mlk-march-on-dc.jpg');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('http://cdn-beheard.lawrencemcdaniel.com/images/mlk-march-on-dc.jpg');
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+body img {
+  opacity: .5;
 }
 
 footer {
