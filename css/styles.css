@@ -1,0 +1,227 @@
+/*------------------------------------------------------------------
+ FOR COURSE: Change the "color" attribute from green to #5F152C
+ ------------------------------------------------------------------*/
+#site-name {
+  font-family: 'Lora', serif;
+#  color: 	#5F152C;
+  color: 	green;
+  font-size: 2em;
+  font-weight: 900;
+  margin: auto;
+}
+/*------------------------------------------------------------------
+ END: FOR COURSE
+ ------------------------------------------------------------------*/
+
+
+body {
+#  font-size: 16px;
+#  color: #fff;
+#  background-color: #61122f;
+  font-family: 'Oxygen', sans-serif;
+}
+
+#logo-img {
+  background-color: #E5E0CD;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: #E5E0CD;
+  border-radius: 0;
+  border: 1px solid #E0d9C9;
+}
+
+
+.navbar-brand {
+#  padding-top: 25px;
+}
+
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.navbar-brand p { /* Kosher cert */
+  color: #000;
+#  text-transform: uppercase;
+  font-size: .7em;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.navbar-brand p span { /* Star-K */
+#  vertical-align: middle;
+}
+
+#nav-list {
+  margin-top: 10px;
+}
+#nav-list a {
+  color: #e9e9e9;
+  text-align: center;
+}
+#nav-list a:hover {
+  background: #777777;
+}
+#nav-list a span {
+  font-size: 1.8em;
+}
+
+
+.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+/* END HEADER */
+
+
+
+
+
+/* HOME PAGE */
+#our-course {
+  text-align: center;
+}
+
+#course-tile {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top:50px;
+  position: relative;
+  border: 1px solid #E0d9C9;
+  overflow: hidden;
+  color: black;
+  background-color: #E5E0CD;
+  background-position: center;
+}
+
+#course-tile:hover {
+  box-shadow: 0 1px 3px 1px #999999;
+}
+
+
+#course-tile img {
+  width: 100%;
+  padding: 5%;
+}
+
+#course-tile p {
+  padding: 5%;
+  margin: 1%;
+  text-align: justify;
+  border: none;
+}
+
+#course-tile p:hover {
+  box-shadow: none;
+}
+
+#course-tile span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  background-color: #E5E0CD;
+#  color: #fff;
+#  opacity: .5;
+}
+
+/* END HOME PAGE */
+
+
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+}
+
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Header */
+
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  /* End Header */
+
+  /* Home Page */
+  /* End Home Page */
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+
+  /* End Home Page */
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+  .navbar-brand {
+    padding-top: 10px;
+    height: 80px;
+  }
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 10px;
+    font-size: 5vw; /* 1vw = 1% of viewport width */
+  }
+  .navbar-brand p { /* Kosher cert */
+    font-size: .6em;
+    margin-top: 12px;
+  }
+  .navbar-brand p img { /* Star-K */
+    height: 20px;
+  }
+
+  #collapsable-nav a { /* Collapsed nav course text */
+    font-size: 1.2em;
+  }
+  #collapsable-nav a span { /* Collapsed nav course glyph */
+    font-size: 1em;
+    margin-right: 5px;
+  }
+
+  /* End Header */
+
+
+  /* Home Page */
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Header */
+  .navbar-brand h1 { /* Restaurant name */
+    padding-top: 5px;
+    font-size: 6vw;
+  }
+  /* End Header */
+
+  /* Home page */
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}
