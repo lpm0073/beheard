@@ -16,7 +16,7 @@
 
 .panel-padding {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 125px;
 }
 
 .panel-rounded-corners {
@@ -48,7 +48,7 @@
   margin: 0px;
   padding: 0px;
   position: relative;
-  border: 0.5px solid indianred;
+  border: 2px solid indianred;
   overflow: hidden;
   color: black;
   background-color: rgba(242,222,223, 0.9);   /* pink */
@@ -92,6 +92,16 @@ border: none;
 
 
 /* END Lean Canvas */
+
+.emailsignup-input-group {
+  margin: 15px;
+}
+
+.emailsignup-socialbuttons {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
 
 #site-name {
   position: absolute;
