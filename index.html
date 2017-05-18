@@ -23,6 +23,16 @@
 
   </head>
 <body>
+  <!-- Facebook Like and Share -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=237187503009894";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <header>
     <nav id="header-nav" class="navbar navbar-default">
       <div class="container">
@@ -40,11 +50,15 @@
     <div class="col-md-5 pull-right alert alert-info alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <strong>Please</strong> Share this page!
+      <!-- Facebook like -->
+      <div class="fb-like" data-href="http://beheard.lawrencemcdaniel.com/" data-width="512" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+<!--
       <div class="input-group input-group-lg pull-right">
         <a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
         <a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
         <a class="btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a>
-      </div><!-- /input-group -->
+      </div>
+-->
     </div>
 
     <section id="section-overview">
