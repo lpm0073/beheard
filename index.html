@@ -221,45 +221,76 @@
       </div> <!-- row -->
     </section><!-- end of email signup-->
 
+    <!-- =============================== Contact Form ======================================================= -->
     <section id="section-getinvolved">
       <div class="row">
         <div class="col-md-6 pull-right panel-padding">
           <div class="panel-column panel-column-full panel-rounded-corners">
             <h3>Join Us!</h3>
-            <p>We're looking for co-founders, mentors and volunteers</p>
 
-            <form>
-              <div class="form-group">
-                <div class="input-group input-group-lg has-success has-feedback extra-margin">
-                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></span>
-                    <input type="text" class="form-control" placeholder="Your first name..." aria-describedby="basic-addon1">
-                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                </div><!-- first name -->
+            <form class="extra-margin" action=" " method="post"  id="contact_form">
+              <fieldset>
 
-                <div class="input-group input-group-lg  has-success has-feedback extra-margin">
-                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></span>
-                    <input type="text" class="form-control" placeholder="Your last name..." aria-describedby="basic-addon1">
-                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                </div><!-- last name -->
+                <!-- First Name -->
+                <div class="form-group">
+                  <div class="inputGroupContainer">
+                    <div class="input-group input-group-lg has-feedback extra-margin">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="first_name" placeholder="First Name" class="form-control"  type="text">
+                    </div>
+                  </div>
+                </div> <!-- form-group -->
 
-                <div class="input-group input-group-lg  has-success has-feedback extra-margin">
-                    <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                    <input type="text" class="form-control" placeholder="email@example.com ..." aria-describedby="basic-addon1">
-                    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-                </div><!-- email -->
+                <!-- Last Name -->
+                <div class="form-group">
+                  <div class="inputGroupContainer">
+                    <div class="input-group input-group-lg has-feedback extra-margin">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                    </div>
+                  </div>
+                </div> <!-- form-group -->
 
-                <div class="extra-margin">
-                  <textarea class="form-control" rows="5" id="comment" placeholder="comments ..."></textarea>
-                </div><!-- comment -->
+                  <!-- email -->
+                  <div class="form-group">
+                    <div class="inputGroupContainer">
+                      <div class="input-group input-group-lg has-feedback extra-margin">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                      </div>
+                    </div>
+                  </div> <!-- form-group -->
 
-                <button type="button" class="btn btn-lg btn-success pull-right extra-margin">Send</button>
-              </div> <!-- form-group -->
+                  <!-- comment -->
+                  <div class="form-group">
+                    <div class="inputGroupContainer">
+                      <div class="input-group extra-margin">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                        <textarea class="form-control" rows="5" name="comment" placeholder="Your comments are welcome ..."></textarea>
+                      </div>
+                    </div>
+                  </div> <!-- form-group -->
+
+                  <!-- Success message -->
+                  <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+                  <!-- Button -->
+                  <div class="form-group">
+                    <label class="control-label"></label>
+                    <div class="">
+                      <button type="submit" class="btn btn-large btn-success pull-right extra-margin" >Send <span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                  </div>
+
+              </fieldset>
 
             </form>
           </div> <!-- panel-column-->
         </div> <!-- col-md5-->
       </div> <!-- row -->
     </section><!-- end of get inolved-->
+
+    <!-- =============================== END Contact Form ======================================================= -->
 
 
   </div><!-- End of #main-content -->
@@ -279,7 +310,8 @@
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
   <!---------------------------->
   <!-- End 3rd party js libraries -->
 

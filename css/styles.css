@@ -1,4 +1,10 @@
 
+
+/* Contact Form */
+#success_message {
+   display: none;
+ }
+
 /* Lean Canvas */
 .col-md-2 {
   padding: 0px;
