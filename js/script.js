@@ -45,7 +45,7 @@ $(document).ready(function() {
                       message:'Please enter at least 10 characters and no more than 200'
                   },
                   notEmpty: {
-                      message: 'Please supply a description of your project'
+                      message: 'Please tell us more about how you want to get involved.'
                   }
                   }
               }
