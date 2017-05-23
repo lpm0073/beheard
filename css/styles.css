@@ -110,11 +110,6 @@ border: none;
   margin: 15px;
 }
 
-.emailsignup-socialbuttons {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-}
 
 #site-name {
   position: absolute;
@@ -140,7 +135,7 @@ body img {
 }
 
 footer {
-  height: 75px;
+  height: auto;
   background-color: #111111;
   color: white;
   margin: 0px;
@@ -148,11 +143,13 @@ footer {
 }
 
 footer p {
-  position: relative;
   padding: 25px;
   text-align: center;
 }
 
+.socialbuttons {
+  float: left;
+}
 
 
 /** HEADER **/

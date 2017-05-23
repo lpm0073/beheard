@@ -212,28 +212,38 @@
     </section><!-- End of Lean Canvas -->
     <!-- =============================== END LEAN CANVAS ======================================================= -->
 
+    <!-- =============================== MAIL LIST SIGNUP ======================================================= -->
     <section id="section-emailsignup">
       <div class="row">
         <div class="col-md-5 pull-left panel-padding">
           <div class="panel-column panel-column-half panel-rounded-corners">
             <h3>Stay Updated</h3>
             <p>Receive regular updates about our service and ways to get more involved.</p>
-            <div class="input-group input-group-lg extra-margin">
-              <input type="text" class="form-control" placeholder="address@example.com">
-              <span class="input-group-btn">
-                <button class="btn btn-danger" type="button">Sign Up</button>
-              </span>
-            </div><!-- /input-group -->
+            <form class="extra-margin" action=" " method="post"  id="maillist_form">
+              <fieldset>
 
-            <div class="input-group input-group-lg extra-margin emailsignup-socialbuttons">
-              <a class="btn btn-lg btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
-              <a class="btn btn-lg btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-              <a class="btn btn-lg btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
-            </div><!-- /input-group -->
+                <!-- Email Address form field -->
+                <div class="form-group">
+                  <div class="inputGroupContainer">
+                    <div class="input-group input-group-lg extra-margin">
+                      <!-- email address input -->
+                      <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+
+                      <!-- submit input -->
+                      <span class="input-group-btn">
+                        <button type="submit" class="btn btn-large btn-danger">Sign Up</button>
+                      </span>
+                    </div><!-- /input-group -->
+                  </div>
+                </div> <!-- form-group -->
+
+              </fieldset>
+            </form>
           </div> <!-- panel-column-->
         </div> <!-- col-md5-->
       </div> <!-- row -->
     </section><!-- end of email signup-->
+    <!-- =============================== END: MAIL LIST SIGNUP ======================================================= -->
 
     <!-- =============================== Contact Form ======================================================= -->
     <section id="section-getinvolved">
@@ -312,6 +322,16 @@
   <!-- =============================== FOOTER AREA ======================================================= -->
   <footer class="footer">
      <div class="container">
+       <form class="extra-margin" action=" " method="post">
+         <fieldset>
+           <div class="input-group input-group-lg extra-margin socialbuttons">
+             <a class="btn btn-lg btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+             <a class="btn btn-lg btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+             <a class="btn btn-lg btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
+           </div><!-- /input-group -->
+         </fieldset>
+       </form>
+
        <p class="text-muted">Contact: Lawrence McDaniel | lpm0073@gmail.com | <a href="http://lawrencemcdaniel.com" target="blank">lawrencemcdaniel.com</a></p>
      </div>
   </footer>
