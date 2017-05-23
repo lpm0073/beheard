@@ -143,14 +143,15 @@ footer {
 }
 
 footer p {
+  float: left;
   padding: 25px;
   text-align: center;
 }
 
-.socialbuttons {
-  float: left;
+footer form {
+  float: right;
+  padding: 25px;
 }
-
 
 /** HEADER **/
 #header-nav {
