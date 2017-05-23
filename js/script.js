@@ -1,5 +1,33 @@
 /*--------------------------------------------------------------------------------------
-  Mail List form validations and REST processing
+  Mail List form button AJAX processing for REST api
+  --------------------------------------------------------------------------------------*/
+$('#maillist-button').on('click', function (e) {
+  console.log("maillist-button on click");
+  var url = "https://api-beheard.lawrencemcdaniel.com/v1/maillist";
+  var data = '{ "emailAddress" : "' + $("#maillist-emailaddress").val() + '" }';
+
+  console.log("#maillist-button.on('click'): " + url + ' ' + data);
+
+  $.ajax({
+      type: 'POST',
+      url: url,
+      data: data,
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      success: function (msg) {
+        console.log(msg);
+      },
+      error: function (e) {
+          console.log(e.responseText); //Actual error
+          console.log(e); //Get the entire error details
+      }
+  });
+
+});
+
+
+/*--------------------------------------------------------------------------------------
+  Mail List form validations
  --------------------------------------------------------------------------------------*/
 $(document).ready(function() {
   $('#maillist_form').bootstrapValidator({
@@ -35,10 +63,6 @@ $(document).ready(function() {
           // Get the BootstrapValidator instance
           var bv = $form.data('bootstrapValidator');
 
-          // Use Ajax to submit form data
-          $.post($form.attr('action'), $form.serialize(), function(result) {
-              console.log(result);
-          }, 'json');
       });
 });
 
