@@ -2,7 +2,6 @@
   Mail List form button AJAX processing for REST api
   --------------------------------------------------------------------------------------*/
 $('#maillist-button').on('click', function (e) {
-  console.log("maillist-button on click");
   var url = "https://api-beheard.lawrencemcdaniel.com/v1/maillist";
   var data = '{ "emailAddress" : "' + $("#maillist-emailaddress").val() + '" }';
 
@@ -18,8 +17,8 @@ $('#maillist-button').on('click', function (e) {
         console.log(msg);
       },
       error: function (e) {
-          console.log(e.responseText); //Actual error
-          console.log(e); //Get the entire error details
+          console.log(e.responseText);
+          console.log(e);
       }
   });
 
@@ -54,6 +53,7 @@ $(document).ready(function() {
           $('#maillist_success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
               $('#maillist_form').data('bootstrapValidator').resetForm();
 
+/*
           // Prevent form submission
           e.preventDefault();
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
           // Get the BootstrapValidator instance
           var bv = $form.data('bootstrapValidator');
-
+*/
       });
 });
 
@@ -126,6 +126,7 @@ $(document).ready(function() {
           $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
               $('#contact_form').data('bootstrapValidator').resetForm();
 
+/*
           // Prevent form submission
           e.preventDefault();
 
@@ -139,5 +140,6 @@ $(document).ready(function() {
           $.post($form.attr('action'), $form.serialize(), function(result) {
               console.log(result);
           }, 'json');
+*/
       });
 });
