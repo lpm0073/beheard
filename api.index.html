@@ -1,0 +1,116 @@
+<html>
+    <head>
+   	<title>Be Heard REST API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="icon" type="image/jpeg" href="https://beheard.lawrencemcdaniel.com/images/favicon.png" />
+        <style>
+          h2 {
+            margin-left: 5px;
+          }
+
+          h3 {
+            margin-left: 10px;
+          }
+
+          p {
+            margin-left: 20px;
+          }
+
+          code {
+             color: red;
+             font-style: italic;
+             background-color: #f1f1f1;
+             padding-right: 5px;
+             padding-left: 5px;
+          }
+
+          pre {
+             background-color: #f1f1f1;
+             margin: 35px;
+          }
+          footer {
+            height: 75px;
+            background-color: #111111;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+          }
+
+          footer p {
+            position: relative;
+            padding: 25px;
+            text-align: center;
+          }
+
+        </style>
+    </head>
+    <body>
+
+      <div id="main-content" class="container">
+        <h1>Welcome to the Be Heard REST API!</h1>
+
+        You have succesfully invoked this API. You are seeing this HTML page because the <code>GET</code> method to the root resource this API returns is content generated as a Mock integration.
+
+        The Be Heard API provides read and write access to several resources. Many of these interact with a NoSQL database while a couple provide seamless integration to other AWS cloud infrastructure back end resources. This API primarily uses a web and computer-friendly data interchange format called JSON which enables this interface to efficiently send and receive text representations of complex data objects. You can read more about JSON <a href="http://www.json.org/" target="_blank">via this link</a>.
+
+        <h2>Resources you can retrieve with this API<h2>
+
+        <h3>Comments</h3>
+        <p>Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in JSON format.</p>
+
+        <p>By making a <a href="/v1/comments/" target="_blank">GET request</a> to <code>/comments</code> you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the JSON objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>/joinus/bid-news-in-dc</code>.</p>
+
+        <h3>Mail List</h3>
+        <p>A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a <a href="/v1/maillist/" target="_blank">GET request</a> to <code>/maillist</code></p>
+
+        <h3>Join Us</h3>
+        <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a <a href="/v1/joinus/" target="_blank">GET request</a> to <code>/joinus</code> or you can optionally append an email address of a single visitor to retrieve only one JSON record for that visitor. For example, to retreive the JSON object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>/joinus/lpm0073@gmail.com</code>.</p>
+
+        <h2>Resources you can store in a cloud database with this API</h2>
+        <p>You can use a REST client such as <a href="https://www.getpostman.com/" target="_blank">Postman</a> to test the POST methods included in this API. Each of the <code>POST</code> API methods require a JSON "payload" that includes the data to be stored. Each method has it's own special format. You'll need to refer to the examples included in this section to create valid payloads.</p>
+
+        <h3>Comments</h3>
+        <p>You can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>
+        	<div>
+        	  	<p><pre>
+{
+	"pageId": "silly-web-page",
+	"userName": "mcdaniel0073",
+	"message": "this article should win a pultizer prize -- not!"
+}</p></pre>
+        	</div>
+
+        <h3>Mail List</h3>
+        <p>You can upload a comment with a <code>POST</code> method to <code>/maillist</code> and a payload of the following format included in the body of the http request:</p>
+        	<div>
+        	  	<p><pre>
+{
+	"emailAddress": "a-valid-email-address@gmail.com"
+}</p></pre>
+        	</div>
+
+
+        <h3>Join Us</h3>
+        <p>You can upload a comment with a <code>POST</code> method to <code>/joinus</code> and a payload of the following format included in the body of the http request:</p>
+        	<div>
+        	  	<p><pre>
+{
+	"emailAddress": "a-valid-email-address@gmail.com",
+	"firstName": "George",
+	"lastName": "Washington",
+	"comment": "Yadda yadda yadda, blah blah nannah nanna nah!",
+}</p></pre>
+        	</div>
+
+      </div>  <!-- id="main-content" class="container" -->
+
+      <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Contact: Lawrence McDaniel | lpm0073@gmail.com | <a href="http://lawrencemcdaniel.com" target="blank">lawrencemcdaniel.com</a></p>
+          </div>
+       </footer>
+      <script type="text/javascript" src="https://use.fontawesome.com/f234ed9c9a.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
