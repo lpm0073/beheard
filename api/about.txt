@@ -1,0 +1,30 @@
+REST api: what is it?
+	images/rest-json-diagram.png
+	images/rest-api-diagram.png
+
+- https://en.wikipedia.org/wiki/Representational_state_transfer
+- JSON: what is it? https://www.w3schools.com/js/js_json_intro.asp
+- why do they matter?
+
+Working with JSON files
+- importing to MS Access and MS Excel: http://cdn.cdata.com/help/DJA/odbc/pg_usageinaccesso.htm
+
+About this interface
+- Micro Services and Serverless Architectures: https://d0.awsstatic.com/whitepapers/microservices-on-aws.pdf
+Microservices are an architectural and organizational approach to software
+development to speed up deployment cycles, foster innovation and ownership,
+and improve maintainability and scalability of software applications - as well as
+scaling organizations delivering software and services. Using a microservices
+approach, software is composed of small independent services that
+communicate over well-defined APIs. These services are owned by small selfcontained
+teams.
+- How this interface is implemented: https://serverlesscode.com/images/guetta_article/image04.png
+- Static (serverless) web hosting
+	images/aws-microservices-architecture.png
+	images/aws-traditional-webapp-architecture.jpg
+- Security: https and CORS
+	images/rest-cors-diagram.png
+
+- NoSQL: what is it? https://www.mongodb.com/nosql-explained
+
+
