@@ -4,20 +4,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="icon" type="image/jpeg" href="https://beheard.lawrencemcdaniel.com/images/favicon.png" />
         <style>
+          body {
+            background-color: #f9f9f9;
+          }
           section {
+            box-shadow: 0 1px 5px 1px #cccccc;
+            border-radius: 5px;
             margin: 20px;
             padding: 10px;
-            background-color: #f9f9f9;
+            background-color: white;
             width: 90%;
           }
 
           h2 {
             margin: 25px;
             margin-left: 5px;
+            color: FireBrick;
           }
 
           h3 {
             margin-left: 10px;
+            font-size: 1.5em;
+            font-weight: bolder;
           }
 
           p {
@@ -154,8 +162,8 @@
                   <div class="col-md-6 pull-right">
                     <img src="https://beheard.lawrencemcdaniel.com/images/rest-api-diagram.png" width="100%" alt="REST API diagram">
                   </div>
+                  <p>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important? And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
                 </div>
-                <p>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important? And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
 
                 <h3>Why do they matter?</h3>
                 <p>A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api creates an import layer of abstraction between the details and nuances of back end computing and storage resources, and the specifics of the many different kinds of front end devices that rely on those resources. Designers and technology professionals have become increasing specialized, and, they increasingly work in disparate teams; often at entirely different companies. Meanwhile, the release cycles of typical web apps and Internet services have accelerated so much over the last decade that may companies release new features multiple times a day. This is made possible in large part because individual team members are able to work autonomously, without the need to synchronize logistical requirements.</p>
@@ -195,7 +203,7 @@
                   </div>
                 </div>
                 <p>
-                  This api is highly secure. Some of the security features are visible and verifiable. You'll notice for example that this api runs over a secure SSL-encryption connection. By experimentation you'll also see that the "write" features of the api only work when called from https://beheard.lawrencemcdaniel.com, which is by no means accidental. Importantly, this api is open and available to public, but is also highly secure meanwhile requiring no user authentication credentials. That's pretty cool! This is all made possible with the standard Internet HTTPS protocol and a newish standard called CORS (Cross-O-Resource-Sharing)
+                  This api is highly secure. Some of the security features are visible and verifiable. You'll notice for example that this api runs over a secure SSL-encryption connection. By experimentation you'll also see that the "write" features of the api only work when called from https://beheard.lawrencemcdaniel.com, which is by no means accidental. Importantly, this api is open and available to public, but is also highly secure meanwhile requiring no user authentication credentials. That's pretty cool! This is all made possible with the standard Internet HTTPS protocol and a newish standard called <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">CORS (Cross Origin Resource Sharing)</a>
                 </p>
               </div>
 
