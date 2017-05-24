@@ -82,6 +82,12 @@
 
             padding: 0px;
           }
+
+          /* for pretty print */
+          li.L0, li.L1, li.L2, li.L3,
+          li.L5, li.L6, li.L7, li.L8 {
+            list-style-type: decimal !important;
+          }
         </style>
     </head>
     <body>
@@ -92,6 +98,7 @@
         <div class="welcome-paragraph">
           <p>You have succesfully invoked this API. You are seeing this HTML page because the <code>GET</code> method to the root resource this API returns is content generated as a Mock integration.</p>
           <p>The Be Heard API provides read and write access to several resources. Many of these interact with a NoSQL database while a couple provide seamless integration to other AWS cloud infrastructure back end resources. This API primarily uses a web and computer-friendly data interchange format called <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> which enables this interface to efficiently send and receive text representations of complex data objects. You can read more about <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> <a href="http://www.json.org/" target="_blank">via this link</a>.</p>
+          <p>Complete source code for the <a href="https://beheard.lawrencemcdaniel.com/" target="_blank">Be Heard</a> web site as well as the technical specifications for this api are freely available for download at this GitHub repository: <a href="https://github.com/lpm0073/beheard" target="_blank">https://github.com/lpm0073/beheard</a></p>
         </div>
 
         <section>
@@ -101,7 +108,7 @@
               <h3>Mail List</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <p>A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a <a href="/v1/maillist/" target="_blank">GET request</a> to <code>/maillist</code></p>
+                  <p>A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
                 </div>
                 <div class="col-md-6 pull-right">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/maillist-screenshot.png" width="100%" alt="Mail list screenshot">
@@ -111,7 +118,7 @@
               <h3>Join Us</h3>
               <div class="row">
                 <div class="col-md-6 pull-right">
-                  <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a <a href="/v1/joinus/" target="_blank">GET request</a> to <code>/joinus</code> or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>/joinus/lpm0073@gmail.com</code>.</p>
+                  <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a> or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/joinus/lpm0073@gmail.com</code>.</p>
                 </div>
                 <div class="col-md-6 pull-left">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/join-us-screenshot.png" width="100%" alt="Mail list screenshot">
@@ -122,7 +129,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <p class="bg-danger">Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format.</p>
-                  <p>By making a <a href="/v1/comments/" target="_blank">GET request</a> to <code>/comments</code> you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>/joinus/bid-news-in-dc</code>.</p>
+                  <p>By making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/comments/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/comments/</a> you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/comments/big-news-in-dc</code>.</p>
                 </div>
               </div>
 
@@ -133,35 +140,66 @@
         <section>
           <div class="row">
             <div class="col-md-12 ">
-              <h2>Resources you can store in a cloud database with this API</h2>
+              <h2>Resources you can store with this API</h2>
               <p>You can use a REST client such as <a href="https://www.getpostman.com/" target="_blank">Postman</a> to test the POST methods included in this API. Each of the <code>POST</code> API methods require a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> "payload" that includes the data to be stored. Each method has it's own special format. You'll need to refer to the examples included in this section to create valid payloads.</p>
-
-              <h3>Comments</h3>
-              <p>You can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>
-              	  	<pre>
-      {
-      	"pageId": "silly-web-page",
-      	"userName": "mcdaniel0073",
-      	"message": "this article should win a pultizer prize -- not!"
-      }</pre>
 
               <h3>Mail List</h3>
               <p>You can upload a comment with a <code>POST</code> method to <code>/maillist</code> and a payload of the following format included in the body of the http request:</p>
-              	  	<pre>
+              	  	<pre class="prettyprint">
       {
       	"emailAddress": "a-valid-email-address@gmail.com"
       }</pre>
 
+      <p>An example web client implementation of this api method:</p>
+      <pre class="prettyprint linenums">
+        /*--------------------------------------------------------------------------------------
+          This is an example web client call to the api using a jQuery AJAX call.
+          This is the actual implentation of the button-click event from the Mail List form button
+          available here: https://github.com/lpm0073/beheard/blob/master/js/script.js
+          --------------------------------------------------------------------------------------*/
+        $('#maillist-button').on('click', function (e) {
+          var url = "https://api-beheard.lawrencemcdaniel.com/v1/maillist";
+          var data = '{ "emailAddress" : "' + $("#maillist-emailaddress").val() + '" }';
+
+          console.log("#maillist-button.on('click'): " + url + ' ' + data);
+
+          $.ajax({
+              type: 'POST',
+              url: url,
+              data: data,
+              contentType: 'application/json; charset=utf-8',
+              dataType: 'json',
+              success: function (msg) {
+                console.log(msg);
+              },
+              error: function (e) {
+                  console.log(e.responseText);
+                  console.log(e);
+              }
+          });
+
+        });</pre>
+
 
               <h3>Join Us</h3>
               <p>You can upload a comment with a <code>POST</code> method to <code>/joinus</code> and a payload of the following format included in the body of the http request:</p>
-              	  	<pre>
+              	  	<pre class="prettyprint">
       {
       	"emailAddress": "a-valid-email-address@gmail.com",
       	"firstName": "George",
       	"lastName": "Washington",
       	"comment": "Yadda yadda yadda, blah blah nannah nanna nah!",
       }</pre>
+
+      <h3>Comments</h3>
+      <p>You can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>
+            <pre class="prettyprint">
+{
+"pageId": "silly-web-page",
+"userName": "mcdaniel0073",
+"message": "this article should win a pultizer prize -- not!"
+}</pre>
+
             </div><!-- col-md-12  -->
           </div><!-- Row -->
 
@@ -178,7 +216,7 @@
                   <div class="col-md-6 pull-right">
                       <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/rest-api-diagram.png" width="100%" alt="REST API diagram">
                   </div>
-                  <p>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important? And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
+                  <p><strong>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important?</strong> And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
                 </div>
 
                 <h3>Why do they matter?</h3>
@@ -198,7 +236,7 @@
                 <h2>About the infrastructure supporting this api</h2>
                 <p>This api is implemented as a Microservice using Amazon Web Services cloud infrasture components and services. Microservices are an architectural and organizational approach to software development to speed up deployment cycles, foster innovation and ownership, and improve maintainability and scalability of software applications - as well as scaling organizations delivering software and services. Using a microservices approach, software is composed of small independent services that communicate over well-defined APIs. These services are owned by small selfcontained teams. Following are some excellent resources for learning more about how to implement secure, robust RESTful interfaces with AWS:
                   <ul>
-                    <li><a href="https://aws.amazon.com/blogs/aws/amazon-api-gateway-build-and-run-scalable-application-backends/" target="_blank">Amazon API Gateway – Build and Run Scalable Application Backends</a></li>
+                    <li><a href="https://aws.amazon.com/blogs/aws/amazon-api-gateway-build-and-run-scalable-application-backends/" target="_blank">Amazon API Gateway: Build and Run Scalable Application Backends</a></li>
                     <li><a href="https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/" target="">Using Amazon API Gateway as a proxy for DynamoDB</a></li>
                     <li><a href="https://www.youtube.com/watch?v=TuGyyTXPQ-U" target="">Youtube: How to use AWS API Gateway to expose AWS DynamoDB database backend</a></li>
                   </ul>
@@ -250,6 +288,8 @@
             <p class="text-muted">Contact: Lawrence McDaniel | lpm0073@gmail.com | <a href="http://lawrencemcdaniel.com" target="blank">lawrencemcdaniel.com</a></p>
           </div>
        </footer>
+
+    <script src="https://rawgit.com/google/code-prettify/master/loader/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer></script>
 <!--
       <script type="text/javascript" src="https://use.fontawesome.com/f234ed9c9a.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
