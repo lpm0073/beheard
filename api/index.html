@@ -16,6 +16,10 @@
             width: 90%;
           }
 
+          h1 {
+              margin-bottom: 25px;
+          }
+
           h2 {
             margin: 25px;
             margin-left: 5px;
@@ -23,14 +27,14 @@
           }
 
           h3 {
-            margin-left: 10px;
+            margin-left: 20px;
             font-size: 1.5em;
             font-weight: bolder;
           }
 
           p {
             margin: 5px;
-            padding: 5px;
+            padding: 25px;
             text-align: justify;
           }
 
@@ -50,7 +54,12 @@
           }
 
           img {
-            padding: 2%;
+            margin: 5px;
+            padding: 25px;
+          }
+
+          ul {
+            margin-left: 25px;
           }
 
           footer {
@@ -67,6 +76,12 @@
             text-align: center;
           }
 
+          .welcome-paragraph p {
+            margin: 0px;
+            margin-bottom: 25px;
+
+            padding: 0px;
+          }
         </style>
     </head>
     <body>
@@ -74,21 +89,22 @@
       <div id="main-content" class="container">
         <h1>Welcome to the Be Heard REST API!</h1>
 
-        You have succesfully invoked this API. You are seeing this HTML page because the <code>GET</code> method to the root resource this API returns is content generated as a Mock integration.
-
-        The Be Heard API provides read and write access to several resources. Many of these interact with a NoSQL database while a couple provide seamless integration to other AWS cloud infrastructure back end resources. This API primarily uses a web and computer-friendly data interchange format called <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> which enables this interface to efficiently send and receive text representations of complex data objects. You can read more about <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> <a href="http://www.json.org/" target="_blank">via this link</a>.
+        <div class="welcome-paragraph">
+          <p>You have succesfully invoked this API. You are seeing this HTML page because the <code>GET</code> method to the root resource this API returns is content generated as a Mock integration.</p>
+          <p>The Be Heard API provides read and write access to several resources. Many of these interact with a NoSQL database while a couple provide seamless integration to other AWS cloud infrastructure back end resources. This API primarily uses a web and computer-friendly data interchange format called <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> which enables this interface to efficiently send and receive text representations of complex data objects. You can read more about <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> <a href="http://www.json.org/" target="_blank">via this link</a>.</p>
+        </div>
 
         <section>
           <div class="row">
-            <div class="col-md-12 panel-padding">
-              <h2>Resources you can retrieve with this API<h2>
+            <div class="col-md-12 ">
+              <h2>Resources you can retrieve with this API</h2>
               <h3>Mail List</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
                   <p>A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a <a href="/v1/maillist/" target="_blank">GET request</a> to <code>/maillist</code></p>
                 </div>
                 <div class="col-md-6 pull-right">
-                  <img src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/maillist-screenshot.png" width="100%" alt="Mail list screenshot">
+                    <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/maillist-screenshot.png" width="100%" alt="Mail list screenshot">
                 </div>
               </div>
 
@@ -98,14 +114,14 @@
                   <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a <a href="/v1/joinus/" target="_blank">GET request</a> to <code>/joinus</code> or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>/joinus/lpm0073@gmail.com</code>.</p>
                 </div>
                 <div class="col-md-6 pull-left">
-                  <img src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/join-us-screenshot.png" width="100%" alt="Mail list screenshot">
+                    <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/join-us-screenshot.png" width="100%" alt="Mail list screenshot">
                 </div>
               </div>
 
               <h3>Comments</h3>
               <div class="row">
                 <div class="col-md-12">
-                  <p>Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format.</p>
+                  <p class="bg-danger">Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format.</p>
                   <p>By making a <a href="/v1/comments/" target="_blank">GET request</a> to <code>/comments</code> you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>/joinus/bid-news-in-dc</code>.</p>
                 </div>
               </div>
@@ -116,7 +132,7 @@
         </section>
         <section>
           <div class="row">
-            <div class="col-md-12 panel-padding">
+            <div class="col-md-12 ">
               <h2>Resources you can store in a cloud database with this API</h2>
               <p>You can use a REST client such as <a href="https://www.getpostman.com/" target="_blank">Postman</a> to test the POST methods included in this API. Each of the <code>POST</code> API methods require a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> "payload" that includes the data to be stored. Each method has it's own special format. You'll need to refer to the examples included in this section to create valid payloads.</p>
 
@@ -146,49 +162,55 @@
       	"lastName": "Washington",
       	"comment": "Yadda yadda yadda, blah blah nannah nanna nah!",
       }</pre>
-            </div><!-- col-md-12 panel-padding -->
+            </div><!-- col-md-12  -->
           </div><!-- Row -->
 
         </section>
 
           <section>
             <div class="row">
-              <div class="col-md-12 panel-padding">
+              <div class="col-md-12 ">
                 <h2>More information about REST api's</h2>
                 <div class="row">
                   <div class="col-md-6 pull-left">
-                    <img src="https://beheard.lawrencemcdaniel.com/images/rest-json-diagram.png" width="100%" alt="JSON diagram">
+                      <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/rest-json-diagram.png" width="100%" alt="JSON diagram">
                   </div>
                   <div class="col-md-6 pull-right">
-                    <img src="https://beheard.lawrencemcdaniel.com/images/rest-api-diagram.png" width="100%" alt="REST API diagram">
+                      <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/rest-api-diagram.png" width="100%" alt="REST API diagram">
                   </div>
                   <p>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important? And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
                 </div>
 
                 <h3>Why do they matter?</h3>
-                <p>A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api creates an import layer of abstraction between the details and nuances of back end computing and storage resources, and the specifics of the many different kinds of front end devices that rely on those resources. Designers and technology professionals have become increasing specialized, and, they increasingly work in disparate teams; often at entirely different companies. Meanwhile, the release cycles of typical web apps and Internet services have accelerated so much over the last decade that may companies release new features multiple times a day. This is made possible in large part because individual team members are able to work autonomously, without the need to synchronize logistical requirements.</p>
-                <p><a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> is an important piece of the puzzle as well. <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> makes it possible to transfer complex data ojbects between front and back ends using a simple text format. When fused with the Internet's standard https protocol, end-to-end SSL encryption, and the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> standard it becomes possible to implement rich and highly sophisticated data-driven features across an infinite variety of Internet-connected devices. With <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> and <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> technology teams would collapse from the unweildly complexity created by having to consider the implications of multitudes of back end infrastructure provisioning conserations against a blistering array of different front end technologies and physical presentation formats.</p>
+                <p class="col-md-12">A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api creates an import layer of abstraction between the details and nuances of back end computing and storage resources, and the specifics of the many different kinds of front end devices that rely on those resources. Designers and technology professionals have become increasing specialized, and, they increasingly work in disparate teams; often at entirely different companies. Meanwhile, the release cycles of typical web apps and Internet services have accelerated so much over the last decade that may companies release new features multiple times a day. This is made possible in large part because individual team members are able to work autonomously, without the need to synchronize logistical requirements.</p>
+                <p class="col-md-12"><a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> is an important piece of the puzzle as well. <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> makes it possible to transfer complex data ojbects between front and back ends using a simple text format. When fused with the Internet's standard https protocol, end-to-end SSL encryption, and the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> standard it becomes possible to implement rich and highly sophisticated data-driven features across an infinite variety of Internet-connected devices. With <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> and <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> technology teams would collapse from the unweildly complexity created by having to consider the implications of multitudes of back end infrastructure provisioning conserations against a blistering array of different front end technologies and physical presentation formats.</p>
 
                 <h3>Working with JSON data</h3>
-                <p>JSON can be imported to/from desktop applications like MS Access and MS Excel with several free online tools. It is also rumored that Microsoft will include <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> data connectors in forthcoming releases of MS Office. For more information read this blog: http://cdn.cdata.com/help/DJA/odbc/pg_usageinaccesso.htm</p>
-              </div><!-- col-md-12 panel-padding -->
+                <p class="col-md-12 bg-danger">JSON can be imported to/from desktop applications like MS Access and MS Excel with several free online tools. It is also rumored that Microsoft will include <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> data connectors in forthcoming releases of MS Office. For more information read this blog: http://cdn.cdata.com/help/DJA/odbc/pg_usageinaccesso.htm</p>
+              </div><!-- col-md-12  -->
             </div><!-- Row -->
 
           </section>
 
           <section>
             <div class="row">
-              <div class="col-md-12 panel-padding">
-                <h2>About this api</h2>
-                <p>This api is implemented as a Microservice using Amazon Web Services cloud infrasture components and services. Microservices are an architectural and organizational approach to software development to speed up deployment cycles, foster innovation and ownership, and improve maintainability and scalability of software applications - as well as scaling organizations delivering software and services. Using a microservices approach, software is composed of small independent services that communicate over well-defined APIs. These services are owned by small selfcontained teams.</p>
+              <div class="col-md-12 ">
+                <h2>About the infrastructure supporting this api</h2>
+                <p>This api is implemented as a Microservice using Amazon Web Services cloud infrasture components and services. Microservices are an architectural and organizational approach to software development to speed up deployment cycles, foster innovation and ownership, and improve maintainability and scalability of software applications - as well as scaling organizations delivering software and services. Using a microservices approach, software is composed of small independent services that communicate over well-defined APIs. These services are owned by small selfcontained teams. Following are some excellent resources for learning more about how to implement secure, robust RESTful interfaces with AWS:
+                  <ul>
+                    <li><a href="https://aws.amazon.com/blogs/aws/amazon-api-gateway-build-and-run-scalable-application-backends/" target="_blank">Amazon API Gateway – Build and Run Scalable Application Backends</a></li>
+                    <li><a href="https://aws.amazon.com/blogs/compute/using-amazon-api-gateway-as-a-proxy-for-dynamodb/" target="">Using Amazon API Gateway as a proxy for DynamoDB</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=TuGyyTXPQ-U" target="">Youtube: How to use AWS API Gateway to expose AWS DynamoDB database backend</a></li>
+                  </ul>
+                </p>
                 <p>Microservices were first pioneered by Amazon.com as a way to overcome crippling complexity in its constantly evolving flagship online store. The approached was later adopted by fast-growth silicon valley startups like Twitter, Facebook, Ube and AirBnb and has sinced become a best practice approach to systems planning with companies of all sizes.</p>
               <h3>Microservice Versus Traditional Infrastructure Planning</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <img src="https://beheard.lawrencemcdaniel.com/images/aws-microservices-architecture.png" width="100%" alt="AWS Microservices Architecture Diagram">
+                    <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/aws-microservices-architecture.png" width="100%" alt="AWS Microservices Architecture Diagram">
                 </div>
                 <div class="col-md-6 pull-right">
-                  <img src="https://beheard.lawrencemcdaniel.com/images/aws-traditional-webapp-architecture.jpg" width="100%" alt="Traditional Web App Infrastructure Diagram">
+                    <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/aws-traditional-webapp-architecture.jpg" width="100%" alt="Traditional Web App Infrastructure Diagram">
                 </div>
               </div>
               <p>
@@ -199,7 +221,7 @@
               <div class="row">
                 <div>
                   <div class="col-md-6 pull-right">
-                    <img src="https://beheard.lawrencemcdaniel.com/images/rest-cors-diagram.png" width="80%" alt="CORS Diagram">
+                      <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/rest-cors-diagram.png" width="80%" alt="CORS Diagram">
                   </div>
                 </div>
                 <p>
@@ -210,11 +232,11 @@
               <h3>NoSQL Databases</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <img src="https://beheard.lawrencemcdaniel.com/images/nosql-banner.jpg" width="100%" alt="NoSQL Database Diagram">
+                    <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/nosql-banner.jpg" width="100%" alt="NoSQL Database Diagram">
                 </div>
                 <p>A NoSQL (originally referring to "non SQL", "non relational" or "not only SQL") database provides a mechanism for storage and retrieval of data which is modeled in means other than the tabular relations used in relational databases. Such databases have existed since the late 1960s, but did not obtain the "NoSQL" moniker until a surge of popularity in the early twenty-first century, triggered by the needs of Web 2.0 companies such as Facebook, Google, and Amazon.com. NoSQL databases are increasingly used in big data and real-time web applications. NoSQL systems are also sometimes called "Not only SQL" to emphasize that they may support SQL-like query languages. You can read more about NoSQL databases here: <a href="https://www.mongodb.com/nosql-explained" target="_blank">https://www.mongodb.com/nosql-explained</a></p>
               </div>
-            </div> <!-- col-md-12 panel-padding -->
+            </div> <!-- col-md-12  -->
             </div> <!-- Row -->
 
 
