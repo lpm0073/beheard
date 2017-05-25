@@ -7,7 +7,7 @@
 
     function joinUs() {
       var ddo = {
-          templateUrl: 'src/public/directives/joinUs/joinUs.directive.html'
+          templateUrl: 'src/public/directives/joinUs/joinus.directive.html'
         };
 
       return ddo;
@@ -42,8 +42,6 @@
                 console.log('http promise failure. something terrible happened: ', response);
                 ctrl.message = 'Something terrible has happened.';
               });
-
         };
-
     }
 })();

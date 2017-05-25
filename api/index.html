@@ -153,33 +153,40 @@
       <p>An example web client implementation of this api method:</p>
       <pre class="prettyprint linenums">
         /*--------------------------------------------------------------------------------------
-          This is an example web client call to the api using a jQuery AJAX call.
-          This is the actual implentation of the button-click event from the Mail List form button
-          available here: https://github.com/lpm0073/beheard/blob/master/js/script.js
+          This is an example web client call to the api from an AngularJS controller.
+          This is the actual implentation of the button-click event from the Mail List form button.
           --------------------------------------------------------------------------------------*/
-        $('#maillist-button').on('click', function (e) {
-          var url = "https://api-beheard.lawrencemcdaniel.com/v1/maillist";
-          var data = '{ "emailAddress" : "' + $("#maillist-emailaddress").val() + '" }';
+          function MaillistController($http) {
+            console.log('MaillistController instantiated');
 
-          console.log("#maillist-button.on('click'): " + url + ' ' + data);
+            var ctrl = this;
+              ctrl.saved = false;
+              ctrl.emailAddress = '';
+              ctrl.message = '';
+              ctrl.response = '';
 
-          $.ajax({
-              type: 'POST',
-              url: url,
-              data: data,
-              contentType: 'application/json; charset=utf-8',
-              dataType: 'json',
-              success: function (msg) {
-                console.log(msg);
-              },
-              error: function (e) {
-                  console.log(e.responseText);
-                  console.log(e);
-              }
-          });
+              ctrl.submitForm = function() {
+                  console.log('MaillistController.submitForm()');
 
+                  var url = "https://api-beheard.lawrencemcdaniel.com/v1/maillist/";
+                  var data = '{ "emailAddress" : "' + ctrl.userInfo.emailAddress + '" }';
+                  var config = "{ 'contentType': 'application/json; charset=utf-8', 'dataType': 'json'}";
+                  var promise = http.post(url, data, config);
+
+                  promise.then(
+                    function success(response) {
+                      console.log('http promise success.', response);
+                      ctrl.saved = true;
+                      ctrl.message = 'Thank you! Please check your email inbox.';
+                    },
+                    function failure(response) {
+                      console.log('http promise failure. something terrible happened: ', response);
+                      ctrl.message = 'Something terrible has happened.';
+                    });
+              };
+          }
         });</pre>
-
+            <p>View the complete controller here: <a href="https://github.com/lpm0073/beheard/blob/master/src/public/directives/maillist/maillist.controller.js" target="_blank">https://github.com/lpm0073/beheard/</a></p>
 
               <h3>Join Us</h3>
               <p>You can upload a comment with a <code>POST</code> method to <code>/joinus</code> and a payload of the following format included in the body of the http request:</p>
@@ -190,6 +197,47 @@
       	"lastName": "Washington",
       	"comment": "Yadda yadda yadda, blah blah nannah nanna nah!",
       }</pre>
+
+      <p>An example web client implementation of this api method:</p>
+
+      <pre class="prettyprint linenums">
+        /*--------------------------------------------------------------------------------------
+          This is an example web client call to the api from an AngularJS controller.
+          This is the actual implentation of the button-click event from the Mail List form button
+          --------------------------------------------------------------------------------------*/
+          function JoinusController($http) {
+            console.log('JoinusController instantiated');
+
+            var ctrl = this;
+              ctrl.userInfo = {};
+              ctrl.saved = false;
+              ctrl.message = '';
+              ctrl.response = '';
+              ctrl.userInfo.comment = '';
+
+              ctrl.setContactForm = function() {
+                  console.log('JoinusController.setContactForm()');
+
+                  var url = "https://api-beheard.lawrencemcdaniel.com/v1/joinus/";
+                  var data = '{ "firstName" : "' + ctrl.userInfo.firstName + '", "lastName" : "' + ctrl.userInfo.lastName + '", "emailAddress" : "' + ctrl.userInfo.emailAddress + '", "comment" : "' + ctrl.userInfo.comment + '" }';
+                  var config = "{ 'contentType': 'application/json; charset=utf-8', 'dataType': 'json'}";
+                  var promise = http.post(url, data, config);
+
+                  promise.then(
+                    function success(response) {
+                      console.log('http promise success.', response);
+                      ctrl.saved = true;
+                      ctrl.message = 'Thank you! Your information has been saved.';
+                    },
+                    function failure(response) {
+                      console.log('http promise failure. something terrible happened: ', response);
+                      ctrl.message = 'Something terrible has happened.';
+                    });
+              };
+          }
+        });</pre>
+        <p>View the complete controller here: <a href="https://github.com/lpm0073/beheard/blob/master/src/public/directives/joinus/joinus.controller.js" target="_blank">https://github.com/lpm0073/beheard/</a></p>
+
 
       <h3>Comments</h3>
       <p>You can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>

@@ -42,8 +42,6 @@
                 console.log('http promise failure. something terrible happened: ', response);
                 ctrl.message = 'Something terrible has happened.';
               });
-
         };
-
     }
 })();
