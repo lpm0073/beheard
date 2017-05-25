@@ -235,6 +235,13 @@ footer form {
   width: 65%;
 }
 
+.maillist-form-alert {
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 95%;
+}
+
+
 .ng-touched.ng-valid {
   border: 1px green solid;
   background-color: rgb(250, 255, 189);

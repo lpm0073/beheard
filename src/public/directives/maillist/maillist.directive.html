@@ -5,26 +5,48 @@
       <div class="panel-column panel-column-half panel-rounded-corners">
         <h3>Stay Updated</h3>
         <p>Receive regular updates about our service and ways to get more involved.</p>
-        <form class="extra-margin" action=" " method="post"  id="maillist_form" name="maillist_form">
+        <div class="" ng-controller="MaillistController as ctrl">
           <fieldset>
+            <form name="mailListForm" novalidate>
 
-            <!-- Email Address form field -->
-            <div class="form-group">
-              <div class="inputGroupContainer">
-                <div class="input-group input-group-lg extra-margin">
-                  <!-- email address input -->
-                  <input id="maillist-emailaddress" name="email" placeholder="E-Mail Address" class="form-control" type="text">
+              <div class="form-group">
+                <div class="inputGroupContainer">
+                  <div class="input-group input-group-lg extra-margin">
+                    <input type="email"
+                        id="emailAddress"
+                        class="form-control"
+                        name="emailAddress"
+                        ng-model="ctrl.userInfo.emailAddress"
+                        placeholder="E-Mail Address"
+                        required>
+                    <span ng-if="joinusForm.emailAddress.$invalid && nemoForm.emailAddress.$touched">
+                        <small>Please provide a valid email address.</small>
+                    </span>
 
-                  <!-- submit input -->
-                  <span class="input-group-btn">
-                    <button id="maillist-button" class="btn btn-large btn-danger" >Sign Up</button>
-                  </span>
-                </div><!-- /input-group -->
-              </div>
-            </div> <!-- form-group -->
+                    <!-- submit input -->
+                    <span class="input-group-btn">
+                      <button class="btn btn-large btn-danger"
+                              ng-disabled="mailListForm.$invalid"
+                              ng-click="ctrl.submitForm()">Sign Up</button>
 
+                    </span>
+                  </div><!-- /input-group -->
+                </div>
+              </div> <!-- form-group -->
+
+            </form>
           </fieldset>
-        </form>
+
+
+          <div ng-if="ctrl.saved" class="maillist-form-alert extra-margin">
+              <p class="alert alert-success">
+                  {{ctrl.message}}
+              </p>
+          </div>
+
+
+
+        </div> <!--  ng-controller="JoinusController as ctrl"  -->
       </div> <!-- panel-column-->
     </div> <!-- col-md5-->
   </div> <!-- row -->
