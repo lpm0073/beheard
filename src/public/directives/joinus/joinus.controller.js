@@ -32,11 +32,6 @@
             var config = "{ 'contentType': 'application/json; charset=utf-8', 'dataType': 'json'}";
             var promise = $http.post(url, data, config);
 
-            console.log('ctrl.userInfo', ctrl.userInfo);
-            console.log('url', url);
-            console.log('data', data);
-            console.log('config', config);
-
             promise.then(
               function success(response) {
                 console.log('http promise success.', response);

@@ -1,75 +1,93 @@
 <!-- =============================== Contact Form ======================================================= -->
 <section id="section-getinvolved">
-  <div class="row">
+  <div class="row join-us-form">
     <div class="col-md-6 pull-right panel-padding">
       <div class="panel-column panel-column-full panel-rounded-corners">
+        <h3>Join Us!</h3>
 
         <div class="" ng-controller="JoinusController as ctrl">
           <fieldset>
-              <legend>Join Us!</legend>
               <form name="joinusForm" novalidate>
 
                 <div class="form-group">
-                    <label for="firstName">Full Name</label>
-                    <input type="text"
-                          class="form-control"
-                          id="firstName"
-                          name="firstName"
-                          placeholder="Your full name"
-                          ng-model="ctrl.userInfo.firstName"
-                          required>
-                    <span ng-if="joinusForm.firstName.$error.required && nemoForm.firstName.$touched">
-                        <small>Your first name is required</small>
-                    </span>
+                  <div class="inputGroupContainer">
+                    <div class="input-group input-group-lg has-feedback extra-margin">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input type="text"
+                            class="form-control"
+                            id="firstName"
+                            name="firstName"
+                            placeholder="First Name"
+                            ng-model="ctrl.userInfo.firstName"
+                            required>
+                      <span ng-if="joinusForm.firstName.$error.required && nemoForm.firstName.$touched">
+                          <small>Your first name is required</small>
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="lastName">Full Name</label>
-                    <input type="text"
-                          class="form-control"
-                          id="lastName"
-                          name="lastName"
-                          placeholder="Your full name"
-                          ng-model="ctrl.userInfo.lastName"
-                          required>
-                    <span ng-if="joinusForm.lastName.$error.required && nemoForm.lastName.$touched">
-                        <small>Your last name is required</small>
-                    </span>
+                  <div class="inputGroupContainer">
+                      <div class="input-group input-group-lg has-feedback extra-margin">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text"
+                              class="form-control"
+                              id="lastName"
+                              name="lastName"
+                              placeholder="Last Name"
+                              ng-model="ctrl.userInfo.lastName"
+                              required>
+                        <span ng-if="joinusForm.lastName.$error.required && nemoForm.lastName.$touched">
+                            <small>Your last name is required</small>
+                        </span>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="emailAddress">Email</label>
-                    <input type="email"
-                          class="form-control"
-                          id="emailAddress"
-                          name="emailAddress"
-                          ng-model="ctrl.userInfo.emailAddress"
-                          placeholder="Email address@somewhere.com">
-                    <span ng-if="joinusForm.emailAddress.$invalid && nemoForm.emailAddress.$touched">
-                        <small>Please provide a valid email address.</small>
-                    </span>
+                  <div class="inputGroupContainer">
+                      <div class="input-group input-group-lg has-feedback extra-margin">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="email"
+                              class="form-control"
+                              id="emailAddress"
+                              name="emailAddress"
+                              ng-model="ctrl.userInfo.emailAddress"
+                              placeholder="your-email@address.com"
+                              required>
+                        <span ng-if="joinusForm.emailAddress.$invalid && nemoForm.emailAddress.$touched">
+                            <small>Please provide a valid email address.</small>
+                        </span>
+                      </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="comment">Comment</label>
-                    <input type="textarea"
-                          style="height:200px; padding-bottom: 150px;"
-                          class="form-control"
-                          rows="5"
-                          cols="50"
-                          id="comment"
-                          name="comment"
-                          placeholder="How would you like to get involved?"
-                          ng-model="ctrl.userInfo.comment">  <!-- closing tag for comment input -->
+                  <div class="inputGroupContainer">
+                     <div class="input-group input-group-lg has-feedback extra-margin">
+                       <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                       <input type="textarea"
+                             style="height:175px"
+                             class="form-control join-us-form-input-comment"
+                             rows="5"
+                             cols="40"
+                             id="comment"
+                             name="comment"
+                             placeholder="How would you like to get involved?"
+                             ng-model="ctrl.userInfo.comment"
+                             required>  <!-- closing tag for comment input -->
+                     </div>
+                   </div>
                 </div>
               </form>
           </fieldset>
 
-          <button class="btn btn-warning"
+          <button class="btn btn-danger pull-right extra-margin"
                   ng-disabled="joinusForm.$invalid"
                   ng-click="ctrl.setContactForm()">Submit</button>
 
-          <div ng-if="ctrl.saved" class="">
+          <div ng-if="ctrl.saved" class="join-us-form-alert extra-margin">
               <p class="alert alert-success">
                   {{ctrl.message}}
               </p>

@@ -153,58 +153,111 @@ footer form {
   padding: 25px;
 }
 
-/** HEADER **/
-#header-nav {
-  background-color: #111111;
-  border-radius: 0;
-  border: 1px solid #111111;
+/* END HEADER */
+
+
+/* Join Us Form */
+#search-results {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+  width: 35%;
+  height: 50%
 }
+/*
+.join-us-form {
+  border: 2px solid black;
+  background-color: #0F4E83;
+  border-radius: 5px;
 
-
-.navbar-brand {
-#  padding-top: 25px;
+  float: inherit;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+  padding: : 0%;
 }
+*/
 
-
-.navbar-brand a:hover, .navbar-brand a:focus {
-  text-decoration: none;
-}
-
-.navbar-brand p { /* Kosher cert */
-  color: #000;
-#  text-transform: uppercase;
-  font-size: .7em;
-  margin-top: 15px;
-  padding: 5px;
-}
-
-.navbar-brand p span { /* Star-K */
-#  vertical-align: middle;
-}
-
-#nav-list {
-  margin-top: 10px;
-}
-#nav-list a {
-  color: #e9e9e9;
+.join-us-form h2, h4  {
+  margin-top: 20px;
   text-align: center;
 }
-#nav-list a:hover {
-  background: #777777;
+
+.join-us-form h4  {
+  color: indianred;
+  font-size: 1.4em;
+  height: 40px;
+  border-bottom: 2px white solid;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 25px;
 }
-#nav-list a span {
-  font-size: 1.8em;
+
+/*
+.join-us-form input  {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 20px;
+}
+*/
+
+.join-us-form-input-comment {
+  vertical-align: text-top;
+}
+
+.join-us-form label  {
+  width: 95%;
+  margin-left: 5px;
+}
+
+.join-us-form button  {
+  margin-left: 5px;
+  align-self: center;
+  margin: 10px;
+  font-size: 1.6em;
+}
+
+.join-us-form span  {
+  margin-left: 15px;
+  font-weight: bold;
+  font-style: oblique;
+/*  color: indianred; */
+}
+
+.join-us-form-alert {
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 65%;
+}
+
+.ng-touched.ng-valid {
+  border: 1px green solid;
+  background-color: rgb(250, 255, 189);
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+  background-color: lightyellow;
 }
 
 
-.navbar-header button.navbar-toggle, .navbar-header .icon-bar {
+
+/* END Join Us Form */
+
+/* START Nemo Info */
+.userinfo {
+  width: 50%;
+  height: 80%;
+  margin-top: 25px;
 
 }
-.navbar-header button.navbar-toggle {
-  clear: both;
-  margin-top: -30px;
-}
-/* END HEADER */
+/* END Nemo Info */
+
 
 
 /********** Large devices only **********/
@@ -215,71 +268,20 @@ footer form {
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* Header */
 
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-  /* End Header */
-
-  /* Home Page */
-  /* End Home Page */
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Home Page */
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-
-  /* End Home Page */
 }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-  /* Header */
-  .navbar-brand {
-    padding-top: 10px;
-    height: 80px;
-  }
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 10px;
-    font-size: 5vw; /* 1vw = 1% of viewport width */
-  }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
-    margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
-  }
-
-  #collapsable-nav a { /* Collapsed nav course text */
-    font-size: 1.2em;
-  }
-  #collapsable-nav a span { /* Collapsed nav course glyph */
-    font-size: 1em;
-    margin-right: 5px;
-  }
-
-  /* End Header */
-
-
-  /* Home Page */
 }
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
-  /* Header */
-  .navbar-brand h1 { /* Restaurant name */
-    padding-top: 5px;
-    font-size: 6vw;
-  }
-  /* End Header */
 
   /* Home page */
 
