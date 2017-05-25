@@ -1,0 +1,39 @@
+"post": {
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "text/html"
+  ],
+  "responses": {
+    "200": {
+      "description": "200 response",
+      "schema": {
+        "$ref": "#/definitions/Empty"
+      },
+      "headers": {
+        "Access-Control-Allow-Origin": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-integration": {
+    "credentials": "arn:aws:iam::090511222473:role/BeheardMailList-editor",
+    "responses": {
+      "default": {
+        "statusCode": "200",
+        "responseParameters": {
+          "method.response.header.Access-Control-Allow-Origin": "'*'"
+        }
+      }
+    },
+    "requestTemplates": {
+      "application/json": "{ \n    \"TableName\": \"BeheardMailList\",\n    \"Item\": {\n\t\"requestId\": {\n            \"S\": \"$context.requestId\"\n            },\n\t\"sourceIp\": {\n\t    \"S\": \"$context.identity.sourceIp\"\n\t    },\n        \"emailAddress\": {\n            \"S\": \"$input.path('$.emailAddress')\"\n        }\n    }\n}\n"
+    },
+    "uri": "arn:aws:apigateway:us-west-2:dynamodb:action/PutItem",
+    "passthroughBehavior": "when_no_templates",
+    "httpMethod": "POST",
+    "type": "aws"
+  }
+},
