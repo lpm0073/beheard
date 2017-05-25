@@ -7,7 +7,7 @@
 
     function joinUs() {
       var ddo = {
-          templateUrl: 'src/public/directives/joinUs/joinus.directive.html'
+          templateUrl: 'src/public/directives/joinus/joinus.directive.html'
         };
 
       return ddo;
