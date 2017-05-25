@@ -1,15 +1,31 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--
+  Custom AngularJS sites by Lawrence McDaniel
+  About me: http://lawrencemcdaniel.com
+            https://www.linkedin.com/in/lawrencemcdaniel/
+  Contact: lpm0073@gmail.com
+-->
+<html lang="en" ng-app="Beheard" ng-strict-di>
   <head>
+    <title>Be Heard</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Be Heard</title>
+
+    <!-- Initializations: hide page until all js is loaded -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        document.getElementsByTagName("html")[0].style.visibility = "visible";
+      });
+    </script>
+
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="bootstrap-social/bootstrap-social.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/jpeg" href="images/favicon.png" />
 
     <!-- facebook open graph -->
     <meta property="og:url" content="http://beheard.lawrencemcdaniel.com" />
@@ -21,357 +37,130 @@
     <meta property="og:image:height" content="509" />
     <!-- End facebook open graph -->
 
+    <!-- for twitter links -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="A better, simpler way to express your opinion to elected officials." />
+    <meta name="twitter:title" content="Be Heard" />
+    <meta name="twitter:site" content="@LorenzoDPolanco" />
+    <meta name="twitter:image" content="---- ADD A TWITTER IMAGE -----" />
+    <meta name="twitter:creator" content="@LorenzoDPolanco" />
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="icon" type="image/jpeg" href="images/favicon.png" />
+
   </head>
-<body>
-  <!-- Facebook Like and Share -->
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=237187503009894";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  <body>
+    <!-- Facebook Like and Share -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=237187503009894";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-  <header>
-    <nav id="header-nav" class="navbar navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <div class="navbar-brand">
-            <h1 id="site-name">Be Heard</h1>
+    <!-- Fixed position loading indicator -->
+    <loading class="loading-indicator"></loading>
+
+    <header>
+      <nav id="header-nav" class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-brand">
+              <h1 id="site-name">Be Heard</h1>
+            </div>
           </div>
-        </div>
-      </div><!-- .container -->
-    </nav><!-- #header-nav -->
-  </header>
+        </div><!-- .container -->
+      </nav><!-- #header-nav -->
+    </header>
 
-  <div id="main-content" class="container">
-
-    <div class="col-md-5 pull-right alert alert-info alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong>Please</strong> Share this page!
-      <!-- Facebook like -->
-      <div class="fb-like" data-href="http://beheard.lawrencemcdaniel.com/" data-width="512" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-<!--
-      <div class="input-group input-group-lg pull-right">
-        <a class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
-        <a class="btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-        <a class="btn btn-social-icon btn-reddit"><span class="fa fa-reddit"></span></a>
+    <ui-view>
+      <div class="text-center initial-loading">
+        <h2>Loading Site...</h2>
       </div>
--->
-    </div>
-
-    <section id="section-overview">
-        <section id="section-introduction">
-          <div class="row">
-            <div class="col-md-7 pull-left panel-padding">
-              <div class="panel-column panel-column-half panel-rounded-corners">
-                <h3>Public Officials Respond To Action</h3>
-                <h4>But it's hard work</h4>
-                <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</p>
-                <h4>Rallies and protests are blunt instruments</h4>
-                <p>Define one clear, direct competitor. Consider the other ways customers can address their problems. What products or servicds exist as alternatives to what we're offering?</p>
-              </div>
-            </div>
-          </div>
-        </section><!-- end of introduction-->
-
-        <section id="section-howitcouldbe">
-          <div class="row">
-            <div class="col-md-8 pull-right panel-padding">
-              <div class="panel-column panel-column-half panel-rounded-corners">
-                <h3>It Should Be Easier</h3>
-                <h4>Technology is on our side</h4>
-                <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</p>
-              </div>
-            </div>
-          </div><!-- End section-overview row 2-->
-        </section><!-- end of how it could be-->
-
-        <section id="section-proposal">
-          <div class="row">
-            <div class="col-md-10 pull-left panel-padding">
-              <div class="panel-column panel-column-full panel-rounded-corners">
-                <h3>Introducing: Virtual Protests</h3>
-                <h4>Description</h4>
-                <p>Web & mobile app that enables you to express your opinion about any current event to "the goverment". the app facilitates virtual demonstrations that are formed on-the-fly by analyzing your free form text message (anything from a sentence or two to a literal manifesto) + an optional selfie image for context to correctly classify your issue and then combine it with others; delivering a complete consolidated analysis to the appropriate public official(s) at the federal, state and local levels.</p>
-                <h4>Use case</h4>
-                <p>a public policy matter is bothering you. you navigate to this new awesome site and impulsively send a freeform text message + an optional selfie or group selfie to "the powers that be". the app will do the following:</p>
-                <ol>
-                  <li>analyze the text of your message for tone and context, identifying relationships to recent political events and policy discussions to determine if this is a federal, state or local matter. automatically categorize your message with dynamically-generated tag clouds.</li>
-                  <li>use geocoding to determine the exact public officials who influence the matter</li>
-                  <li>analyze the image for faces, demographic information, and tone. analyze for context in the image that might reinforce the message (location, gestures, text on signs / banners, etc)</li>
-                  <li>provide you with the option to either send the message anonymously, or to sign the message, including as much or as little personal information as you prefer</li>
-                  <li>provide an option to share your message on social media channels to invite others to join (sign onto) your message</li>
-                  <li>deliver your message to the appropriate public official(s). officials actually receive a regularly updated and fully digested executive summary report of consolidated analysis of constituents' sentiment on your issue and how it is trending.</li>
-                </ol>
-              </div>
-            </div>
-          </div><!-- End section-overview row 2-->
-        </section><!-- end of how it could be-->
-
-    </section><!-- end section-proposal-->
+    </ui-view>
 
 
-    <!-- =============================== LEAN CANVAS ======================================================= -->
-    <section id="section-leancanvas">
-      <div class="row">
-        <section id="leancanvas-title">
-          <div class="col-md-12">
-            <h2 id="leancanvas-title">Lean Canvas</h2>
-          </div>
-        </section>
-        <section id="section-problem">
-          <div class="col-md-2">
-            <div class="panel-column panel-column-full panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> The Problem</h3>
-              <h4>Top 3 Problems</h4>
-              <p>What is the crucial problem faced by your customers? Capture their central frustration.</p>
-              <h4>Existing alternatives</h4>
-              <p>Define one clear, direct competitor. Consider the other ways customers can address their problems. What products or servicds exist as alternatives to what we're offering?</p>
-            </div>
-          </div>
-        </section><!-- end of problem -->
 
-        <section id="section-solution">
-          <div class="col-md-2">
-            <div class="panel-column panel-column-half panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-check" aria-hidden="true"></span> The Solution</h3>
-              <h4>Top 3 Solutions</h4>
-              <p>What is our solution to customers' problem? Present the defining elements our service. What makes it the top tool for addressing customers' needs?</p>
-            </div>
-            <div class="panel-column panel-column-half panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-scale" aria-hidden="true"></span> Key Metrics</h3>
-              <h4>Key activities we measure</h4>
-              <p>How will we track consumers engagement, excitement and usage of our product?</p>
-            </div>
-          </div>
-        </section><!-- end of solution -->
-
-
-        <section id="section-valueproposition">
-          <div class="col-md-4">
-            <div class="panel-column panel-column-full panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Unique Value Proposition</h3>
-              <h4>A Clear and compelling message</h4>
-              <p>This message should explain what we do, how we are different and why we are worth investing in. What is our promise to consumers? Zero in on the heart of our service and highlight what stands our about the service we provide.</p>
-              <h4>High level concept</h4>
-              <p>How does our service fit into the bigger picture? Where does it fall in the grand scheme of things?</p>
-            </div>
-          </div>
-        </section><!-- end of valueproposition -->
-
-        <section id="section-advantage">
-          <div class="col-md-2">
-            <div class="panel-column panel-column-half panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> Unfair Advantage</h3>
-              <h4>Our differentiator</h4>
-              <p>How do we stand out from competitors? What puts us ahead of the pack? Why should consumers have confidence in our service above others?</p>
-            </div>
-            <div class="panel-column panel-column-half panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Channels</h3>
-              <h4>Path to customers</h4>
-              <p>How will we interact with consumers, inform them of our developments and services? Print ads, social media platforms, promotional events, or even word of mouth?</p>
-            </div>
-          </div>
-        </section><!-- end of customers -->
-
-        <section id="section-customers">
-          <div class="col-md-2">
-            <div class="panel-column panel-column-full panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Customer Segments</h3>
-              <h4>Target Customers</h4>
-              <p>Who can we help? Identify 3 or 4 user personas we envision turning to us for solutions. </p>
-              <h4>Early Adopters</h4>
-              <p>Define the specific characteristics of our early adopter customers.</p>
-            </div>
-          </div>
-        </section><!-- end of customers -->
-      </div><!-- End of 1st lean canvas row  -->
-
-      <div class="row">
-        <section id="section-cost">
-          <div class="col-md-6">
-            <div class="panel-column panel-column-quarter panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Cost Structure</h3>
-              <h4>Customer acquisition costs, distribution costs, hosting, people, etc.</h4>
-              <p>What will it cost to launch and maintain this business? Consider each stage of our startup from creating a web site and acquiring users to hiring employees and producing goods to marketing our service and delivering to customers.</p>
-            </div>
-          </div>
-        </section><!-- end of cost -->
-        <section id="section-revenue">
-          <div class="col-md-6">
-            <div class="panel-column panel-column-quarter panel-column-leancanvas">
-              <h3><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Revenue Streams</h3>
-              <h4>Revenue model, lifetime value, gross margin, etc.</h4>
-              <p>What monetary sources will fuel this company? How will we generate income? Generate a pricing model for our service and then highlight other sources of revenue: ad sales, subscription fees, or other sales.</p>
-            </div>
-          </div>
-        </section><!-- end of cost -->
-      </div><!-- End of 2nd lean canvas row -->
-    </section><!-- End of Lean Canvas -->
-    <!-- =============================== END LEAN CANVAS ======================================================= -->
-
-    <!-- =============================== MAIL LIST SIGNUP ======================================================= -->
-    <section id="section-emailsignup">
-      <div class="row">
-        <div class="col-md-5 pull-left panel-padding">
-          <div class="panel-column panel-column-half panel-rounded-corners">
-            <h3>Stay Updated</h3>
-            <p>Receive regular updates about our service and ways to get more involved.</p>
-            <form class="extra-margin" action=" " method="post"  id="maillist_form" name="maillist_form">
-              <fieldset>
-
-                <!-- Email Address form field -->
-                <div class="form-group">
-                  <div class="inputGroupContainer">
-                    <div class="input-group input-group-lg extra-margin">
-                      <!-- email address input -->
-                      <input id="maillist-emailaddress" name="email" placeholder="E-Mail Address" class="form-control" type="text">
-
-                      <!-- submit input -->
-                      <span class="input-group-btn">
-                        <button id="maillist-button" class="btn btn-large btn-danger" >Sign Up</button>
-                      </span>
-                    </div><!-- /input-group -->
-                  </div>
-                </div> <!-- form-group -->
-
-              </fieldset>
-            </form>
-          </div> <!-- panel-column-->
-        </div> <!-- col-md5-->
-      </div> <!-- row -->
-    </section><!-- end of email signup-->
-    <!-- =============================== END: MAIL LIST SIGNUP ======================================================= -->
-
-    <!-- =============================== Contact Form ======================================================= -->
-    <section id="section-getinvolved">
-      <div class="row">
-        <div class="col-md-6 pull-right panel-padding">
-          <div class="panel-column panel-column-full panel-rounded-corners">
-            <h3>Join Us!</h3>
-
-            <form class="extra-margin" action=" " method="post"  id="contact_form">
-              <fieldset>
-
-                <!-- First Name -->
-                <div class="form-group">
-                  <div class="inputGroupContainer">
-                    <div class="input-group input-group-lg has-feedback extra-margin">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input name="first_name" placeholder="First Name" class="form-control"  type="text">
-                    </div>
-                  </div>
-                </div> <!-- form-group -->
-
-                <!-- Last Name -->
-                <div class="form-group">
-                  <div class="inputGroupContainer">
-                    <div class="input-group input-group-lg has-feedback extra-margin">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
-                    </div>
-                  </div>
-                </div> <!-- form-group -->
-
-                  <!-- email -->
-                  <div class="form-group">
-                    <div class="inputGroupContainer">
-                      <div class="input-group input-group-lg has-feedback extra-margin">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-                      </div>
-                    </div>
-                  </div> <!-- form-group -->
-
-                  <!-- comment -->
-                  <div class="form-group">
-                    <div class="inputGroupContainer">
-                      <div class="input-group extra-margin">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                        <textarea class="form-control" rows="5" name="comment" placeholder="Your comments are welcome ..."></textarea>
-                      </div>
-                    </div>
-                  </div> <!-- form-group -->
-
-                  <!-- Success message -->
-                  <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
-                  <!-- Button -->
-                  <div class="input-group input-group-lg extra-margin">
-                    <span class="input-group-btn">
-                      <button type="submit" class="btn btn-large btn-success pull-right extra-margin" >Send</button>
-                    </span>
-                  </div><!-- /input-group -->
-
-
-              </fieldset>
-
-            </form>
-          </div> <!-- panel-column-->
-        </div> <!-- col-md5-->
-      </div> <!-- row -->
-    </section><!-- end of get inolved-->
-
-    <!-- =============================== END Contact Form ======================================================= -->
-
-
-  </div><!-- End of #main-content -->
-
-  <!-- =============================== FOOTER AREA ======================================================= -->
-  <footer class="footer">
-     <div class="container">
-       <div>
-         <p class="text-muted">Contact: Lawrence McDaniel | lpm0073@gmail.com | <a href="http://lawrencemcdaniel.com" target="blank">lawrencemcdaniel.com</a></p>
-         <form>
-           <fieldset>
-             <div class="input-group">
-               <a class="btn btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
-               <a class="btn btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
-               <a class="btn btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
-             </div><!-- /input-group -->
-           </fieldset>
-         </form>
+    <!-- =============================== FOOTER AREA ======================================================= -->
+    <footer class="footer">
+       <div class="container">
+         <div>
+           <p class="text-muted">Contact: Lawrence McDaniel | lpm0073@gmail.com | <a href="http://lawrencemcdaniel.com" target="blank">lawrencemcdaniel.com</a></p>
+           <form>
+             <fieldset>
+               <div class="input-group">
+                 <a class="btn btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></a>
+                 <a class="btn btn btn-social-icon btn-twitter"><span class="fa fa-twitter"></span></a>
+                 <a class="btn btn btn-social-icon btn-linkedin"><span class="fa fa-linkedin"></span></a>
+               </div><!-- /input-group -->
+             </fieldset>
+           </form>
+         </div>
        </div>
-     </div>
-  </footer>
+    </footer>
 
-   <!-- 3rd party js libraries -->
-  <script type="text/javascript" src="https://use.fontawesome.com/f234ed9c9a.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-  <!-- End 3rd party js libraries -->
+    <!-- 3rd party js libraries -->
+   <script type="text/javascript" src="https://use.fontawesome.com/f234ed9c9a.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="js/script.js"></script>
+   <!-- End 3rd party js libraries -->
 
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-99322878-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <!-- End Google Analytics -->
+    <!-- 3rd party libraries: angularjs, bootstrap, etc. -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
 
-  <!-- Start of StatCounter Code for Default Guide
-  <script type="text/javascript">
-  var sc_project=11345841;
-  var sc_invisible=1;
-  var sc_security="a5afebd3";
-  var scJsHost = (("https:" == document.location.protocol) ?
-  "https://secure." : "http://www.");
-  document.write("<sc"+"ript type='text/javascript' src='" +
-  scJsHost+
-  "statcounter.com/counter/counter.js'></"+"script>");
-  </script>
-  <noscript><div class="statcounter"><a title="hit counter"
-  href="http://statcounter.com/" target="_blank"><img
-  class="statcounter"
-  src="//c.statcounter.com/11345841/0/a5afebd3/1/" alt="hit
-  counter"></a></div></noscript>
-   End of StatCounter Code for Default Guide -->
-</body>
+    <!-- Main Horrors Module -->
+    <script type="text/javascript" src="src/beheard.module.js"></script>
+
+    <!-- Common Module -->
+    <script type="text/javascript" src="src/common/common.module.js"></script>
+    <script type="text/javascript" src="src/common/loading/loading.component.js"></script>
+    <script type="text/javascript" src="src/common/loading/loading.interceptor.js"></script>
+
+    <!-- Public Module -->
+    <script type="text/javascript" src="src/public/public.module.js"></script>
+    <script type="text/javascript" src="src/public/public.routes.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-99322878-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
+
+    <!-- Start of StatCounter Code for Default Guide
+    <script type="text/javascript">
+    var sc_project=11345841;
+    var sc_invisible=1;
+    var sc_security="a5afebd3";
+    var scJsHost = (("https:" == document.location.protocol) ?
+    "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="hit counter"
+    href="http://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="//c.statcounter.com/11345841/0/a5afebd3/1/" alt="hit
+    counter"></a></div></noscript>
+     End of StatCounter Code for Default Guide -->
+
+
+  </body>
+
 </html>
