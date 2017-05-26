@@ -138,8 +138,8 @@
               <h3>Mail List</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
-                  <p>Description: A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a GET request.</p>
+                  <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
+                  <p><u>Description</u>: A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a GET request.</p>
                 </div>
                 <div class="col-md-6 pull-right">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/screenshot-maillist.jpg" width="100%" alt="Mail list screenshot">
@@ -149,8 +149,8 @@
               <h3>Join Us</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
-                  <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a GET request, or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/joinus/lpm0073@gmail.com</code>.</p>
+                  <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
+                  <p><u>Description</u>: a "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a GET request, or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/joinus/lpm0073@gmail.com</code>.</p>
                 </div>
                 <div class="col-md-6 pull-right">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/screenshot-joinus.jpg" width="100%" alt="Mail list screenshot">
@@ -160,9 +160,9 @@
               <h3>Comments</h3>
               <div class="row">
                 <div class="col-md-12">
-                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
+                  <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
                   <p class="bg-danger">Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format.</p>
-                  <p>By making a GET request you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/comments/big-news-in-dc</code>.</p>
+                  <p><u>Description</u>: by making a GET request you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/comments/big-news-in-dc</code>.</p>
                 </div>
               </div>
 
@@ -174,11 +174,11 @@
           <div class="row">
             <div class="col-md-12 ">
               <h2>Resources you can store with this API</h2>
-              <p>Description: you can use a REST client such as <a href="https://www.getpostman.com/" target="_blank">Postman</a> to test the POST methods included in this API. Each of the <code>POST</code> API methods require a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> "payload" that includes the data to be stored. Each method has it's own special format. You'll need to refer to the examples included in this section to create valid payloads.</p>
+              <p>You can use a REST client such as <a href="https://www.getpostman.com/" target="_blank">Postman</a> to test the POST methods included in this API. Each of the <code>POST</code> API methods require a <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> "payload" that includes the data to be stored. Each method has it's own special format. You'll need to refer to the examples included in this section to create valid payloads.</p>
 
               <h3>Mail List</h3>
-              <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
-              <p>You can upload a comment with a <code>POST</code> method to <code>/maillist</code> and a payload of the following format included in the body of the http request:</p>
+              <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
+              <p><u>Description</u>: you can upload a comment with a <code>POST</code> method to <code>/maillist</code> and a payload of the following format included in the body of the http request:</p>
               	  	<pre class="prettyprint">
       {
       	"emailAddress": "a-valid-email-address@gmail.com"
@@ -223,8 +223,8 @@
             <p>View the complete controller here: <a href="https://github.com/lpm0073/beheard/blob/master/src/public/directives/maillist/maillist.controller.js" target="_blank">https://github.com/lpm0073/beheard/</a></p>
 
               <h3>Join Us</h3>
-              <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
-              <p>Description: you can upload a comment with a <code>POST</code> method to <code>/joinus</code> and a payload of the following format included in the body of the http request:</p>
+              <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
+              <p><u>Description</u>: you can upload a comment with a <code>POST</code> method to <code>/joinus</code> and a payload of the following format included in the body of the http request:</p>
               	  	<pre class="prettyprint">
       {
       	"emailAddress": "a-valid-email-address@gmail.com",
@@ -275,8 +275,8 @@
 
 
       <h3>Comments</h3>
-      <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
-      <p>Description: you can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>
+      <p class="url"><u>URL</u>: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
+      <p><u>Description</u>: you can upload a comment with a <code>POST</code> method to <code>/comments</code> and a payload of the following format included in the body of the http request:</p>
             <pre class="prettyprint">
 {
 "pageId": "silly-web-page",
@@ -307,7 +307,7 @@
                 <p class="">A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api creates an import layer of abstraction between the details and nuances of back end computing and storage resources, and the specifics of the many different kinds of front end devices that rely on those resources. Designers and technology professionals have become increasing specialized, and, they increasingly work in disparate teams; often at entirely different companies. Meanwhile, the release cycles of typical web apps and Internet services have accelerated so much over the last decade that may companies release new features multiple times a day. This is made possible in large part because individual team members are able to work autonomously, without the need to synchronize logistical requirements.</p>
                 <p class=""><a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> is an important piece of the puzzle as well. <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> makes it possible to transfer complex data ojbects between front and back ends using a simple text format. When fused with the Internet's standard https protocol, end-to-end SSL encryption, and the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> standard it becomes possible to implement rich and highly sophisticated data-driven features across an infinite variety of Internet-connected devices. With <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> and <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> technology teams would collapse from the unweildly complexity created by having to consider the implications of multitudes of back end infrastructure provisioning conserations against a blistering array of different front end technologies and physical presentation formats.</p>
 
-                <p class="bg-danger">Working with JSON data: JSON can be imported to/from desktop applications like MS Access and MS Excel with several free online tools. It is also rumored that Microsoft will include <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> data connectors in forthcoming releases of MS Office. For more information read this blog: http://cdn.cdata.com/help/DJA/odbc/pg_usageinaccesso.htm</p>
+                <p class="bg-danger"><strong>Working with JSON data:</strong> JSON can be imported to/from desktop applications like MS Access and MS Excel with several free online tools. It is also rumored that Microsoft will include <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> data connectors in forthcoming releases of MS Office. For more information read this blog: http://cdn.cdata.com/help/DJA/odbc/pg_usageinaccesso.htm</p>
               </div><!-- col-md-12  -->
             </div><!-- Row -->
 
