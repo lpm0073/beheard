@@ -76,11 +76,40 @@
             text-align: center;
           }
 
+          a {
+              color: indianred;
+          }
+
+          a:hover {
+            color: lightcoral;
+            text-decoration: none;
+            font-weight: bolder;
+          }
+
+          .url {
+            margin: 5px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            padding: 25px;
+            padding-bottom: 0px;
+            text-align: left;
+          }
+
+          .url:hover {
+            font-weight: bolder;
+          }
+
           .welcome-paragraph p {
             margin: 0px;
             margin-bottom: 25px;
-
             padding: 0px;
+          }
+
+          .bg-danger {
+              margin: 50px;
+              margin-top: 25px;
+              margin-bottom: 25px;
+              font-style: italic;
           }
 
           /* for pretty print */
@@ -108,7 +137,8 @@
               <h3>Mail List</h3>
               <div class="row">
                 <div class="col-md-6 pull-left">
-                  <p>A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
+                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/maillist/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/maillist/</a></p>
+                  <p>Description: A mail list sign up form exists on the landing page where visitors can add their email address to a newsletter database. You can download this database by making a GET request.</p>
                 </div>
                 <div class="col-md-6 pull-right">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/screenshot-maillist.jpg" width="100%" alt="Mail list screenshot">
@@ -117,10 +147,11 @@
 
               <h3>Join Us</h3>
               <div class="row">
-                <div class="col-md-6 pull-right">
-                  <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a> or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/joinus/lpm0073@gmail.com</code>.</p>
-                </div>
                 <div class="col-md-6 pull-left">
+                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
+                  <p>A "Join Us" form also exists on the landing page where visitors can leave their contact information if they'd like to get more involved with Be Heard. You can download the entire database  by making a GET request, or you can optionally append an email address of a single visitor to retrieve only one <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> record for that visitor. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> object representing the visitor with email address "lpm0073@gmail.com", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/joinus/lpm0073@gmail.com</code>.</p>
+                </div>
+                <div class="col-md-6 pull-right">
                     <img class="img-responsive img-rounded" src="https://s3-us-west-2.amazonaws.com/beheard.lawrencemcdaniel.com/images/screenshot-joinus.jpg" width="100%" alt="Mail list screenshot">
                 </div>
               </div>
@@ -128,8 +159,9 @@
               <h3>Comments</h3>
               <div class="row">
                 <div class="col-md-12">
+                  <p class="url">URL: <a href="https://api-beheard.lawrencemcdaniel.com/v1/joinus/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/joinus/</a></p>
                   <p class="bg-danger">Though not currently implemented on the production site, the Be Heard API provides a full-featured comments api that is page-aware and can optionally be used to dump the entire comments database in <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> format.</p>
-                  <p>By making a GET request to <a href="https://api-beheard.lawrencemcdaniel.com/v1/comments/" target="_blank">https://api-beheard.lawrencemcdaniel.com/v1/comments/</a> you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/comments/big-news-in-dc</code>.</p>
+                  <p>By making a GET request you can retrieve a list of Comments in this API. You can optionall append the URI of one of the site's web page to retrieve only the comments made to that page. For example, to retreive the <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a> objects representing the page comments from web site page "big-news-in-dc", you can would make a GET request to <code>https://api-beheard.lawrencemcdaniel.com/v1/comments/big-news-in-dc</code>.</p>
                 </div>
               </div>
 
@@ -264,7 +296,7 @@
                   <div class="col-md-6 pull-right">
                       <img class="img-responsive img-rounded" src="https://beheard.lawrencemcdaniel.com/images/rest-api-diagram.png" width="100%" alt="REST API diagram">
                   </div>
-                  <p><strong>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important?</strong> And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshel that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
+                  <p><strong>So what exactly is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api, and why is it important?</strong> And while we're at it, what in the heck is <a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON</a>? Imagine a super-duper universal adaptor that could connect any source input to any output. That would be pretty cool! In a nutshell that is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api implemented using <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. A <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api provides a standardized way for any Internet-connected device to access any kind of Internet-accessible resource. a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a> api makes it possible to create a single back end that is used by web sites, mobile apps, and IoT devices, providing a consistent user experience across all of these different kinds of devices.</p>
                 </div>
 
                 <h3>Why do they matter?</h3>
